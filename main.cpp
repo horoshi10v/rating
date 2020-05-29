@@ -246,7 +246,6 @@ void excellent(student* vid) {
     std::string path = "Otchet.txt";
     std::fstream fout;
     fout.open(path, std::fstream::app);
-
     std::vector<std::string> search;
     int p;
     std::cout << "Оберіть предмет:\n1.Вища математика\n2.Фізика\n3.Програмування\n4.АтСД\n5.УФМ\n6.Англійська\n7.БЖД\n8.ТЙМс\n0.Повенутися до головного меню\nВиберіть потрібну опцію: ";
@@ -419,7 +418,6 @@ void edit(student* vid, float& sm, float& sf, float& sp, float& sa, float& sy, f
         //підрахунок середньго та рейтингово балла кожного студента
         vid[i].sb = (float(vid[i].mat + vid[i].fiz + vid[i].prg + vid[i].atsd + vid[i].yfm + vid[i].eng + vid[i].bzd + vid[i].tjms)) / 8;
         vid[i].sr = (float(((((vid[i].mat) * 6 + (vid[i].fiz) * 3 + (vid[i].prg) * 3 + (vid[i].atsd) * 6 + (vid[i].yfm) * 4 + (vid[i].eng) * 2 + (vid[i].bzd) * 3 + (vid[i].tjms) * 4) / 31) * 0.9) + (vid[i].dop) * 0.25));
-
     std::cout << "\nТепер відомість виглядає так:\n";
     for (int i = 0; i < size; i++) {
         std::cout << i + 1 << ". " << vid[i].fio << "; Рейтинговий балл - " << vid[i].sr << std::endl;
@@ -435,7 +433,6 @@ void deleteS(student* vid, float& sm, float& sf, float& sp, float& sa, float& sy
     std::cout << "\nУвага!\nПри видалені студента буде зміненно файл input.txt, не забудьте заново перезаписати розрахунки для Otchet.txt!\nВведіть номер студента - ";
     std::cin >> v;
    for (int i = v - 1; i < size; i++) {
-
         vid[i].fio = vid[i + 1].fio;
         vid[i].mat = vid[i + 1].mat;
         vid[i].fiz = vid[i + 1].fiz;
@@ -457,13 +454,10 @@ void deleteS(student* vid, float& sm, float& sf, float& sp, float& sa, float& sy
 }
 
 
-
-
 int main() {
     setlocale(LC_ALL, "Ukr");
     float sm, sf, sp, sa, sy, se, sbz, st;//сер. бал по предметах
     int k, p;
-
     student* vid = new student[size];
     std::cout << "Виберіть сбосіб вводу:\n1.Через файл 'input.txt'\n2.Заповнити відомість вручну\nЗробіть свій вибір - ";
     (std::cin >> p).get();
