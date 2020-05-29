@@ -429,7 +429,6 @@ void edit(student* vid, float& sm, float& sf, float& sp, float& sa, float& sy, f
 
 void deleteS(student* vid, float& sm, float& sf, float& sp, float& sa, float& sy, float& se, float& sbz, float& st) {
     int v;
-
     for (int i = 0; i < size; i++) {
         std::cout << i + 1 << ". " << vid[i].fio << "; Рейтинговий балл - " << vid[i].sr << std::endl;
     }
@@ -503,6 +502,5 @@ int main() {
                 break;
         }
     }
-
     return 0;
 }
